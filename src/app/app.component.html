@@ -1,0 +1,57 @@
+<div class="box" *ngFor="let item of response">
+
+  <!--<ng-template *ngIf="response[0].section == 1">
+    <app-section1></app-section1>
+  </ng-template>
+
+  <ng-template *ngIf="response[1].section == 2">
+    <app-section2></app-section2>
+  </ng-template>
+
+  <ng-template *ngIf="response[2].section == 3">
+    <app-section3></app-section3>
+  </ng-template>
+
+  <ng-template *ngIf="response[3].section == 4">
+    <app-section4></app-section4>
+  </ng-template>
+
+  <ng-template *ngIf="response[4].section == 1">
+    <app-section5></app-section5>
+
+  </ng-template>-->
+
+
+  <!--<div [ngSwitch]="item.section">
+    <div *ngSwitchCase="1">First Number</div>
+    <div *ngSwitchCase="2">Second Number</div>
+    <div *ngSwitchCase="3">Third Number</div>
+    <div *ngSwitchCase="4">four Number</div>
+    <div *ngSwitchCase="5">five Number</div>
+    <div *ngSwitchDefault>Other Number</div>
+   </div>-->
+
+   <ng-container
+    *ngIf="item.section==1 && item.on_off">
+    <app-section1></app-section1>
+  </ng-container>
+
+   <ng-container *ngIf="item.section==2 && item.on_off">
+    <app-section2  [ngStyle]="{'order':'1'}"></app-section2>
+   </ng-container>
+
+   <ng-container *ngIf="item.section==3 && item.on_off" >
+    <app-section3 [ngStyle]="{'order':'5'}"></app-section3>
+   </ng-container>
+
+   <ng-container *ngIf="item.section==4 && item.on_off" >
+    <app-section4 [ngStyle]="{'order':'3'}"></app-section4>
+   </ng-container>
+
+   <ng-container *ngIf="item.section==5 && item.on_off"  >
+    <app-section5 [ngStyle]="{'order':'4'}"></app-section5>
+   </ng-container>
+
+</div>
+
+
