@@ -1,4 +1,4 @@
-<div class="box" *ngFor="let item of response">
+<ng-container class="box" *ngFor="let item of response">
 
   <!--<ng-template *ngIf="response[0].section == 1">
     <app-section1></app-section1>
@@ -52,6 +52,7 @@
     <app-section5 [ngStyle]="{'order':'4'}"></app-section5>
    </ng-container>
 
-</div>
+  </ng-container>
+
 
 
