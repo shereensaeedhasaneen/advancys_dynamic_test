@@ -1,4 +1,4 @@
-<ng-container class="box" *ngFor="let item of response">
+<ng-container class="box" *ngFor="let item of response ; let i=index">
 
   <!--<ng-template *ngIf="response[0].section == 1">
     <app-section1></app-section1>
@@ -33,23 +33,23 @@
 
    <ng-container
     *ngIf="item.section==1 && item.on_off">
-    <app-section1></app-section1>
+    <app-section1 (move) = "order(i , $event)" [section_order]="item.order_index"></app-section1>
   </ng-container>
 
    <ng-container *ngIf="item.section==2 && item.on_off">
-    <app-section2  [ngStyle]="{'order':'1'}"></app-section2>
+    <app-section2 (move) = "order(i , $event)" [section_order]="item.order_index" [ngStyle]="{'order':'1'}"></app-section2>
    </ng-container>
 
    <ng-container *ngIf="item.section==3 && item.on_off" >
-    <app-section3 [ngStyle]="{'order':'5'}"></app-section3>
+    <app-section3 (move) = "order(i , $event)" [ngStyle]="{'order':'5'}"></app-section3>
    </ng-container>
 
    <ng-container *ngIf="item.section==4 && item.on_off" >
-    <app-section4 [ngStyle]="{'order':'3'}"></app-section4>
+    <app-section4 (move) = "order(i , $event)" [ngStyle]="{'order':'3'}"></app-section4>
    </ng-container>
 
    <ng-container *ngIf="item.section==5 && item.on_off"  >
-    <app-section5 [ngStyle]="{'order':'4'}"></app-section5>
+    <app-section5 (move) = "order(i , $event)" [ngStyle]="{'order':'4'}"></app-section5>
    </ng-container>
 
   </ng-container>

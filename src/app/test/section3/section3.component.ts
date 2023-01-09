@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-section3',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./section3.component.scss']
 })
 export class Section3Component implements OnInit {
+  @Output() move:EventEmitter<boolean>=new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  order(sort_type:boolean){
+    this.move.emit(sort_type);
+  }
 }
